@@ -5,24 +5,40 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 
-export default function BoxCard() {
+interface iCard {
+  imgSrc: string;
+  title: string;
+  description: string;
+}
+export default function BoxCard({ imgSrc, title, description }: iCard) {
+  const imageUrl = `${process.env.PUBLIC_URL || ""}/${
+    imgSrc || "defautImage.png"
+  }`;
+
   return (
-    <Card sx={{ maxWidth: 290 }}>
+    <Card
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+        maxWidth: 290,
+        margin: "8px",
+      }}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image={`${process.env.PUBLIC_URL || ""}/funko2.png`}
+          image={imageUrl}
           alt="fred"
           style={{ objectFit: "contain", margin: "8px" }}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Funko - Fred Mercury
+            {title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {description}
           </Typography>
         </CardContent>
       </CardActionArea>
