@@ -47,9 +47,9 @@ export default function Home() {
 
         <Grid item xs={12} sm={6} md={4} lg={3}>
           <BoxCard
-            imgSrc="animewoman.jpg"
-            title="Personagem Otaku"
-            description="Sexy e com acabamento impecável"
+            imgSrc="funko3.jpeg"
+            title="Funko pop TV"
+            description="Louco e com acabamento impecável"
           />
         </Grid>
 
@@ -58,6 +58,29 @@ export default function Home() {
             imgSrc="dragonballpersonagem.jpg"
             title="Personagem Goku"
             description="O mais forte e com melhor acabamento"
+          />
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <BoxCard
+            imgSrc="funko4.jpeg"
+            title="Funko Madeirão"
+            description="O mais forte e duro como madeira"
+          />
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <BoxCard
+            imgSrc="funko6.jpeg"
+            title=" Funko Personagem Vegeta"
+            description="O mais Brabo do Dragon Ball"
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <BoxCard
+            imgSrc="funko5.jpeg"
+            title="Squirdlee"
+            description="O mais molhado dos pokemons e mais casca grossa"
           />
         </Grid>
       </section>
