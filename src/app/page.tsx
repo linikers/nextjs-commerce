@@ -1,17 +1,57 @@
 import React from "react";
-import {
-  Typography,
-  Toolbar,
-  AppBar,
-  Card,
-  CardContent,
-  Button,
-  Grid,
-} from "@mui/material";
+import { Typography, Toolbar, AppBar, Grid, Container } from "@mui/material";
 import BoxCard from "@/components/card";
 import BoxFooter from "@/components/footer";
 
 export default function Home() {
+  const products = [
+    {
+      imgSrc: "funko1.png",
+      title: "Funko - Djonga",
+      description: "O melhor cantor do rap naciona",
+    },
+    {
+      imgSrc: "funko2.png",
+      title: "Funko - Fred",
+      description: "lindo e bonito",
+    },
+    {
+      imgSrc: "funko3.jpeg",
+      title: "Funko pop TV",
+      description: "Louco e com acabamento impecável",
+    },
+    {
+      imgSrc: "funko4.jpeg",
+      title: "Funko Madeirão",
+      description: "O mais forte e duro como madeira",
+    },
+    {
+      imgSrc: "funko5.jpeg",
+      title: "Squirdlee",
+      description: "O mais molhado dos pokemons e mais casca grossa",
+    },
+    {
+      imgSrc: "funko6.jpeg",
+      title: "Funko Personagem Vegeta",
+      description: "O mais Brabo do Dragon Ball",
+    },
+    {
+      imgSrc: "funko7.jpeg",
+      title: "Funko Personagem Vegeta",
+      description: "O mais Brabo do Dragon Ball",
+    },
+    {
+      imgSrc: "funko8.jpg",
+      title: "Funko Personagem Vegeta",
+      description: "O mais Brabo do Dragon Ball",
+    },
+    {
+      imgSrc: "dragonballpersonagem.jpg",
+      title: "Personagem Goku",
+      description: "O mais forte e com melhor acabamento",
+    },
+  ];
+
   return (
     <>
       <AppBar position="static">
@@ -26,41 +66,17 @@ export default function Home() {
         <Typography variant="h4">Produtos</Typography>
       </div>
 
-      <section
-        style={{ padding: "20px", display: "flex", justifyContent: "center" }}
-      >
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-          <BoxCard
-            imgSrc="funko2.png"
-            title="Funko - Fred"
-            description="lindo e bonito"
-          />
-        </Grid>
-
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-          <BoxCard
-            imgSrc="funko1.png"
-            title="Funko - Djonga"
-            description="O melhor cantor do rap naciona"
-          />
-        </Grid>
-
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-          <BoxCard
-            imgSrc="animewoman.jpg"
-            title="Personagem Otaku"
-            description="Sexy e com acabamento impecável"
-          />
-        </Grid>
-
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-          <BoxCard
-            imgSrc="dragonballpersonagem.jpg"
-            title="Personagem Goku"
-            description="O mais forte e com melhor acabamento"
-          />
-        </Grid>
-      </section>
+      <Container style={{ display: "flex", flexWrap: "wrap" }}>
+        {products.map((product, index) => (
+          <Grid key={index} item xs={12} sm={6} md={4} lg={3}>
+            <BoxCard
+              imgSrc={product.imgSrc}
+              title={product.title}
+              description={product.description}
+            />
+          </Grid>
+        ))}
+      </Container>
 
       <BoxFooter />
     </>
