@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Toolbar, AppBar, Grid, Container } from "@mui/material";
 import BoxCard from "@/components/card";
 import BoxFooter from "@/components/footer";
+import Header from "@/components/headerTop";
 
 export default function Home() {
   const products = [
@@ -47,18 +48,14 @@ export default function Home() {
     },
     {
       imgSrc: "dragonballpersonagem.jpg",
-      title: "Personagem Goku",
+      title: "Funko - Goku",
       description: "O mais forte e com melhor acabamento",
     },
   ];
 
   return (
     <>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6">LinX Commerce</Typography>
-        </Toolbar>
-      </AppBar>
+      <Header />
 
       <div
         style={{ display: "flex", justifyContent: "center", padding: "12px" }}
